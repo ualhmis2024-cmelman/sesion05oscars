@@ -16,6 +16,10 @@ class PersonaTest {
 		Persona p6 = new Persona ("Pepa", "m", "05/03/2010");
 		Persona p7 = new Persona ("Pepe", null, null);
 		Persona p8 = new Persona ("Pepe", "h", null);
+		Persona p9 = new Persona (null, "m", "05/03/2010");
+		Persona p10 = new Persona (null, "m", "05/03/2010");
+		Persona p11 = new Persona ("Manolo", "h", "01/01/2000");
+		Persona p12 = new Persona ("Manolo", null, "01/01/2000");
 		Director d1 = new Director ("Dire", "m", "01/01/2000");
 		Pelicula peli1 = new Pelicula("Maven mola !!!", d1);
 		
@@ -34,7 +38,15 @@ class PersonaTest {
 		
 		assertFalse (p1.equals(peli1));
 		
+		assertFalse(p1.equals(p9));
+		assertTrue(p9.equals(p10));
+		assertFalse(p5.equals(p7));
+		assertFalse(p5.equals(p8));
+		assertFalse(p1.equals(p11));
+		assertFalse(p12.equals(p11));
+		assertFalse(p11.equals(p12));
 	}
+	
 	@Test
 	void testGetNombre() {
 		Persona p1 = new Persona ("Pepe", "h", "01/01/2000");
