@@ -15,16 +15,13 @@ public class TestGestorPremios {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(bos));
 
-		// action
-		GestorPremios p = new GestorPremios(); // Para llegar al 100%: creacion de objeto y llamada al constructor por defecto 
+		GestorPremios p = new GestorPremios();
 		p.crearPremio("Aventura del año");
 		p.nominarPelicula(null, null);
 		
-		// assertion
 		String salida = "El premio 'null' no existe.";
 		assertEquals(salida + System.lineSeparator(), bos.toString(), "La salida por consola no es exactamente igual a la esperada.");
 
-		// undo the binding in System
 		System.setOut(originalOut);
 	}
 	
@@ -34,16 +31,13 @@ public class TestGestorPremios {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(bos));
 
-		// action
-		GestorPremios p = new GestorPremios(); // Para llegar al 100%: creacion de objeto y llamada al constructor por defecto 
+		GestorPremios p = new GestorPremios();
 		p.crearPremio("Aventura del año");
 		p.asignarGanadora(null, null);;
 		
-		// assertion
 		String salida = "El premio 'null' no existe.";
 		assertEquals(salida + System.lineSeparator(), bos.toString(), "La salida por consola no es exactamente igual a la esperada.");
 
-		// undo the binding in System
 		System.setOut(originalOut);
 	}
 
